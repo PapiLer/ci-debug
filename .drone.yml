@@ -1,0 +1,26 @@
+clone: 
+  depth: 1
+kind: pipeline
+name: JFla-Karamel
+tag: 0x01
+concurrency:
+  limit: 1
+steps: 
+  - 
+    commands: 
+      - git config --global user.name "Khalif766"
+      - git config --global user.email "ekaristi699@gmail.com"
+      - git clone https://github.com/Khalif766/JFla-Karamel JFla-new --depth=1
+      - cd JFla-new
+      - chmod a+x gettools.sh
+      - ./gettools.sh
+      - chmod a+x build.clang.sh
+      - ./build.clang.sh > log.txt
+      - echo " BUILD AOSP DONE. "
+      - cd /drone/src/
+      - echo " DONE BUILD ALL KERNEL " 
+    image: bryanhafidz/bryan-docker:0x02
+    name: Build Kernel
+    trigger: 
+      branch: 
+        - main
