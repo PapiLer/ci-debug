@@ -1,0 +1,19 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: bryanhafidz/bryan-docker:0x02
+   steps:
+      - run:
+          command: |
+           git config --global user.name "Risti699"
+           git config --global user.email "wahhap10@gmail.com"
+           git clone https://github.com/Risti699/JFla-Karamel -b JFla-new
+           cd JFla-Karamel
+           chmod a+x gettools.sh
+           ./gettools.sh
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
