@@ -1,31 +1,19 @@
 version: 2.1
 jobs:
-  run:
+  compile:
    docker:
-      - image: ubuntu:latest
-
+      - image: bryanhafidz/bryan-docker:0x02
    steps:
       - run:
-          name: Installing sudo...
           command: |
-           apt-get update && apt-get upgrade -y
-           apt-get install sudo -y
-      - run:
-          name: Installing timezone data...
-          command: |
-           export DEBIAN_FRONTEND=noninteractive
-           ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-           apt-get install tzdata -y
-           dpkg-reconfigure --frontend noninteractive tzdata
-      - run:
-          name: Installing some required packages...
-          command: |
-           apt-get install bc bash git-core gnupg gnupg2 build-essential \
-           zip curl make automake autogen autoconf autotools-dev libtool shtool python \
-           m4 gcc libtool zlib1g-dev flex bison libssl-dev nano unzip tar xz-utils \
-           software-properties-common gcc-aarch64-linux-gnu wget -q -y
+           git config --global user.name "Risti699"
+           git config --global user.email "wahhap10@gmail.com"
+           git clone https://github.com/Risti699/JFla -b JFla
+           cd JFla
+           chmod a+x gettools.sh
+           ./gettools.sh
 workflows:
   version: 2.1
   cooking:
     jobs:
-      - run
+      - compile
