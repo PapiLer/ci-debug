@@ -9,8 +9,6 @@ jobs:
           name: setup config...
           command: |
            apt-get update && apt-get upgrade -y
-           git config --global user.name "Risti766"
-           git config --global user.email "wahhap10@gmail.com"
 
 workflows:
   version: 2.1
