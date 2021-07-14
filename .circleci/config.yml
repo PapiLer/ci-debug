@@ -1,19 +1,19 @@
 version: 2.1
 jobs:
-  compile:
+  run:
    docker:
-      - image: bryanhafidz/bryan-docker:0x02
+      - image: hdrj/aosp:latest
+
    steps:
       - run:
+          name: setup config...
           command: |
-           git config --global user.name "Risti699"
+           apt-get update && apt-get upgrade -y
+           git config --global user.name "Risti766"
            git config --global user.email "wahhap10@gmail.com"
-           git clone https://github.com/Risti699/JFla -b JFla
-           cd JFla
-           chmod a+x gettools.sh
-           ./gettools.sh
+
 workflows:
   version: 2.1
   cooking:
     jobs:
-      - compile
+      - run
