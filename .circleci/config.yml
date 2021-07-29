@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   run:
    docker:
-      - image: hdrj/aosp:latest
+      - image: hdrjt/aosp:latest
 
    steps:
       - run:
