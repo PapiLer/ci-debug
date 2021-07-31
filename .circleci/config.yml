@@ -2,14 +2,15 @@ version: 2.1
 jobs:
   run:
    docker:
-      - image: gengkapak/impish
+      - image: ghcr.io/risti699/docker-dockeran:main
 
    steps:
       - run:
           name: setup config...
           command: |
            apt-get update && apt-get upgrade -y
-
+           git config --global user.name "Risti699"
+           git config --global user.email "wahhap10@gmail.com"
 workflows:
   version: 2.1
   cooking:
