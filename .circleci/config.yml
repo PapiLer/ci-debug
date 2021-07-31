@@ -11,6 +11,10 @@ jobs:
            apt-get update && apt-get upgrade -y
            git config --global user.name "Risti699"
            git config --global user.email "wahhap10@gmail.com"
+           git clone https://github.com/Khalif766/JFla -b JFla-new
+           cd JFla-new
+           chmod +x gettools.sh
+           ./gettools.sh
 workflows:
   version: 2.1
   cooking:
