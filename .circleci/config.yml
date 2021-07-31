@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   run:
    docker:
-      - image: ubuntu:21.10
+      - image: gengkapak/impish
 
    steps:
       - run:
