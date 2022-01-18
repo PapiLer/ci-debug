@@ -12,7 +12,7 @@ jobs:
            git config --global user.name "Risti699"
            git config --global user.email "wahhap10@gmail.com"
            git clone https://github.com/Risti699/Karamel
-           cd JFla-Karamel
+           cd Karamel
            chmod +x gettools.sh
            ./gettools.sh
 workflows:
